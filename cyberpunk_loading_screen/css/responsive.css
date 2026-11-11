@@ -1,0 +1,54 @@
+/* =====================================================================
+   responsive.css — toute l'interface est en rem : on ajuste la taille
+   de base selon la résolution (1080p = 16px), puis on simplifie la mise
+   en page sur les petits écrans.
+   ===================================================================== */
+
+/* grands écrans */
+@media (min-width: 2200px) { html { font-size: 20px; } }   /* 1440p */
+@media (min-width: 3000px) { html { font-size: 27px; } }   /* 4K */
+@media (min-height: 1300px) and (max-width: 2199px) { html { font-size: 18px; } }
+
+/* écrans plus petits que 1080p */
+@media (max-width: 1700px) { html { font-size: 14.5px; } }
+@media (max-width: 1450px) { html { font-size: 13px; } }
+@media (max-width: 1200px) { html { font-size: 11.5px; } }
+@media (max-height: 820px) and (min-width: 1201px) { html { font-size: 13px; } }
+@media (max-height: 680px) { html { font-size: 11px; } }
+
+/* ultrawide (21:9 et plus) : on resserre l'interface au centre, le décor reste plein écran */
+@media (min-aspect-ratio: 21/10) {
+    #top, #middle, #bottom { left: 50%; right: auto; width: 110rem; margin-left: -55rem; }
+}
+@media (min-aspect-ratio: 21/10) and (max-width: 2000px) {
+    #top, #middle, #bottom { width: 100rem; margin-left: -50rem; }
+}
+
+/* hauteur réduite : on allège la colonne centrale */
+@media (max-height: 760px) {
+    #middle { top: 7.6rem; }
+    .srv-extra { display: none; }
+    .brand-slogan { display: none; }
+}
+
+/* écran étroit (fenêtré, 4:3, ou très petite résolution) */
+@media (max-width: 1050px) {
+    #faction-card { display: none; }
+    #server-card { width: 24rem; }
+    #progress { margin-right: 0; height: auto; }
+    #player { position: absolute; right: auto; left: 0; top: auto; bottom: 100%; margin-bottom: 4.4rem; width: 26rem; height: 8.6rem; }
+    #bottom { height: 14.5rem; }
+    #middle { bottom: 30rem; }
+    .tip-text { font-size: 1rem; }
+    .tip { white-space: normal; height: auto; line-height: 1.4; }
+    .tip-wrap { line-height: 1.5rem; padding-top: 0.6rem; }
+    .steps li { margin-right: 0.7rem; }
+}
+@media (max-width: 1050px) and (max-height: 760px) {
+    #server-card { display: none; }
+}
+@media (max-width: 700px) {
+    html { font-size: 10px; }
+    .link-state { display: none; }
+    .brand h1 { font-size: 2rem; }
+}

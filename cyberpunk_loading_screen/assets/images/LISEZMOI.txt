@@ -1,0 +1,7 @@
+Emplacement libre pour tes propres images (captures du serveur, illustrations…).
+
+Pour les utiliser comme fonds en rotation, ajoute leur chemin dans config/config.js :
+    arrierePlans: { images: [ "assets/images/ma_capture.jpg", "assets/backgrounds/night_city.jpg" ], ... }
+
+Conseils : JPG, 1920x1080, moins de 400 Ko par image. N'utilise que des images
+dont tu as les droits.
